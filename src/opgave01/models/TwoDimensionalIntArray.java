@@ -10,27 +10,47 @@ public class TwoDimensionalIntArray {
     }
 
     public void setValueAt(int row, int column, int value) {
-
+        value = intArray[row][column];
     }
 
     public int getValueAt(int row, int column) {
-        return -1;
+        return intArray[row][column];
     }
 
 
     public int sumRow(int row) {
-        return -1;
+        int sum = 0;
+        for (int i = 0; i < intArray[row].length; i++) {
+            sum += intArray[row][i];
+        }
+        return sum;
     }
 
     public int sumColumn(int column) {
-        return -1;
+        int sum = 0;
+        for (int i = 0; i < intArray.length; i++) {
+            sum += intArray[i][column];
+        }
+        return sum;
     }
 
     public int sumAll() {
-        return -1;
+        int sum = 0;
+        for (int inner = 0; inner < intArray.length; inner++) {
+            for (int outer = 0; outer < intArray[inner].length; outer++) {
+                sum += intArray[inner][outer];
+            }
+        }
+        return sum;
     }
 
     public void print() {
+        for (int inner = 0; inner < intArray.length; inner++) {
+            for (int outer = 0; outer < intArray[inner].length; outer++) {
+                System.out.print(intArray[inner][outer] + " ");
+            }
+            System.out.println();
+        }
 
     }
 
